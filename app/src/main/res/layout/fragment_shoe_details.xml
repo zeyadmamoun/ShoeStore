@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background_main"
+        android:padding="25dp"
+        tools:context=".fragments.ShoeDetailsFragment">
+
+        <TextView
+            android:id="@+id/shoe_name_label"
+            style="@style/LabelStyle"
+            android:text="@string/shoe_name"
+            app:layout_constraintBottom_toTopOf="@id/ShoeNameTextField"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/guideline1" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/ShoeNameTextField"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/enter_shoe_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/shoe_name_label"
+            app:layout_constraintTop_toBottomOf="@id/shoe_name_label"
+            app:startIconDrawable="@drawable/ic_name">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/ShoeNameTextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:minHeight="48dp"
+                android:textColorHint="@color/label_text_color" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/Company"
+            style="@style/LabelStyle"
+            android:text="@string/company_name"
+            app:layout_constraintBottom_toTopOf="@id/CompanyTextField"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ShoeNameTextField" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/CompanyTextField"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/enter_company_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/ShoeNameTextField"
+            app:layout_constraintTop_toBottomOf="@id/Company"
+            app:startIconDrawable="@drawable/ic_name">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/CompanyTextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:minHeight="48dp"
+                android:textColorHint="@color/label_text_color" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/ShoeSizeLabel"
+            style="@style/LabelStyle"
+            android:text="@string/shoe_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/CompanyTextField"
+            app:layout_constraintTop_toBottomOf="@id/CompanyTextField" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/ShoeSizeTextField"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/enter_shoe_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/ShoeSizeLabel"
+            app:layout_constraintTop_toBottomOf="@id/ShoeSizeLabel"
+            app:startIconDrawable="@drawable/ic_name">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/ShoeSizeTextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:minHeight="48dp"
+                android:textColorHint="@color/label_text_color" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/DescriptionLabel"
+            style="@style/LabelStyle"
+            android:text="@string/description"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/ShoeSizeTextField"
+            app:layout_constraintTop_toBottomOf="@id/ShoeSizeTextField" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/DescriptionTextField"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/enter_description"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/DescriptionLabel"
+            app:layout_constraintTop_toBottomOf="@id/DescriptionLabel"
+            app:startIconDrawable="@drawable/ic_name">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/DescriptionTextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:minHeight="48dp"
+                android:textColorHint="@color/label_text_color" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/addBtn"
+            android:layout_width="200dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/roboto_mono"
+            android:text="@string/add_shoe"
+            android:textStyle="bold"
+            app:icon="@drawable/ic_baseline_add_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/DescriptionTextField" />
+
+        <Button
+            android:id="@+id/cancel_button"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:height="60dp"
+            android:fontFamily="@font/roboto_mono"
+            android:text="@string/cancel"
+            android:textStyle="bold"
+            app:icon="@drawable/ic_baseline_cancel_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/addBtn" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.07" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

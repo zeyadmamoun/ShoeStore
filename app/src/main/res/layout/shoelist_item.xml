@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="shoe"
+            type="com.example.shoestore.models.Shoe"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/showNameLabel"
+            style="@style/LabelStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Shoe Name : "
+            app:layout_constraintBottom_toTopOf="@+id/ShoeSizeLabel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/ShoeSizeLabel"
+            style="@style/LabelStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Shoe Size : "
+            app:layout_constraintBottom_toTopOf="@+id/CompanyLabel"
+            app:layout_constraintStart_toStartOf="@+id/showNameLabel"
+            app:layout_constraintTop_toBottomOf="@+id/showNameLabel" />
+
+        <TextView
+            android:id="@+id/CompanyLabel"
+            style="@style/LabelStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Company Name : "
+            app:layout_constraintBottom_toTopOf="@+id/DescriptionLabel"
+            app:layout_constraintStart_toStartOf="@+id/ShoeSizeLabel"
+            app:layout_constraintTop_toBottomOf="@+id/ShoeSizeLabel" />
+
+        <TextView
+            android:id="@+id/DescriptionLabel"
+            style="@style/LabelStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Description : "
+            app:layout_constraintStart_toStartOf="@+id/showNameLabel"
+            app:layout_constraintTop_toBottomOf="@id/CompanyLabel" />
+
+        <TextView
+            android:id="@+id/NameTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{shoe.name}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/showNameLabel"
+            app:layout_constraintTop_toTopOf="@+id/showNameLabel" />
+
+        <TextView
+            android:id="@+id/SizeTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{Double.toString(shoe.size)}"
+            app:layout_constraintStart_toEndOf="@id/ShoeSizeLabel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/ShoeSizeLabel"/>
+        <TextView
+            android:id="@+id/CompanyTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{shoe.company}"
+            app:layout_constraintStart_toEndOf="@id/CompanyLabel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/CompanyLabel"/>
+
+        <TextView
+            android:id="@+id/DescriptionTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{shoe.description}"
+            app:layout_constraintStart_toEndOf="@id/DescriptionLabel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/DescriptionLabel" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
